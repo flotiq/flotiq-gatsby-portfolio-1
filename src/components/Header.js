@@ -1,19 +1,19 @@
 import React from 'react';
 import { Disclosure } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
-import { BellIcon } from '@heroicons/react/solid';
+import Logo from '../assets/Logo.svg';
 
 const Header = () => (
-    <Disclosure as="nav" className="bg-white shadow">
+    <Disclosure as="nav" className="bg-white">
         {({ open }) => (
             <>
                 <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-                    <div className="relative flex justify-between h-16">
+                    <div className="relative flex justify-between h-32">
                         <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                             {/* Mobile menu button */}
                             <Disclosure.Button className="inline-flex items-center justify-center
-                            p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100
-                            focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                            p-2 rounded-md text-primary focus:outline-none focus:ring-2
+                            focus:ring-inset focus:ring-indigo-500"
                             >
                                 <span className="sr-only">Open main menu</span>
                                 {open ? (
@@ -26,29 +26,36 @@ const Header = () => (
                         <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                             <div className="flex-shrink-0 flex items-center">
                                 <img
-                                    className="block lg:hidden h-8 w-auto"
-                                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                                    className="block lg:hidden h-14 w-auto"
+                                    src={Logo}
                                     alt="Workflow"
                                 />
                                 <img
-                                    className="hidden lg:block h-8 w-auto"
-                                    src="https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-800-text.svg"
+                                    className="hidden lg:block h-14 w-auto"
+                                    src={Logo}
                                     alt="Workflow"
                                 />
                             </div>
                         </div>
-                        <div className="absolute inset-y-0 right-0 flex items-center
-                        pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
-                        >
-                            <button
-                                type="button"
-                                className="bg-white p-1 rounded-full text-gray-400
-                                hover:text-gray-500 focus:outline-none focus:ring-2
-                                focus:ring-offset-2 focus:ring-indigo-500"
-                            >
-                                <span className="sr-only">View notifications</span>
-                                <BellIcon className="h-6 w-6" aria-hidden="true" />
-                            </button>
+                        <div className="flex items-center">
+                            <div className="flex-shrink-0">
+                                <a
+                                    href="mailto:hello@flotiq.com"
+                                    className="
+                                    italic
+                                    font-light
+                                    relative
+                                    inline-flex
+                                    items-center
+                                    px-4
+                                    py-2
+                                    text-sm
+                                    font-regular
+                                    underline"
+                                >
+                                    My works
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
