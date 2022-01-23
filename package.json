@@ -15,9 +15,11 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@fontsource/playfair-display": "^4.5.1",
     "@headlessui/react": "^1.4.2",
     "@heroicons/react": "^1.0.5",
     "@popperjs/core": "^2.11.0",
+    "@tailwindcss/typography": "^0.5.0",
     "gatsby": "^4.4.0",
     "gatsby-plugin-google-analytics": "^4.4.0",
     "gatsby-plugin-image": "^2.4.0",

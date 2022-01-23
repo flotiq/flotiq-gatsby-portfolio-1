@@ -43,7 +43,8 @@ module.exports = {
                 downloadMediaFile: true,
                 forceReload: false,
                 includeTypes: [
-                    'example',
+                    'project',
+                    '_media',
                 ],
             },
         },
