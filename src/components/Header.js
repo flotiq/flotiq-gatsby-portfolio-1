@@ -9,7 +9,7 @@ const Header = () => (
             <>
                 <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
                     <div className="relative flex justify-between h-32">
-                        <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                        <div className="inset-y-0 flex items-center sm:hidden order-3">
                             {/* Mobile menu button */}
                             <Disclosure.Button className="inline-flex items-center justify-center
                             p-2 rounded-md text-primary focus:outline-none focus:ring-2
@@ -23,7 +23,9 @@ const Header = () => (
                                 )}
                             </Disclosure.Button>
                         </div>
-                        <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+                        <div className="flex-1 flex items-center justify-center
+                        sm:items-stretch sm:justify-start order-2 sm:order-1"
+                        >
                             <div className="flex-shrink-0 flex items-center">
                                 <img
                                     className="block lg:hidden h-14 w-auto"
@@ -37,10 +39,10 @@ const Header = () => (
                                 />
                             </div>
                         </div>
-                        <div className="flex items-center">
+                        <div className="flex items-center order-1 sm:order-2">
                             <div className="flex-shrink-0">
                                 <a
-                                    href="mailto:hello@flotiq.com"
+                                    href="mailto:hello@domain.com"
                                     className="
                                     italic
                                     font-light
