@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../layouts/layout';
-import ProjectName from '../components/ProjectName';
+import ProjectName from '../components/project/ProjectName';
 
 const PortfolioProjectTemplate = ({ data }) => {
     const { project } = data;
@@ -9,7 +9,7 @@ const PortfolioProjectTemplate = ({ data }) => {
     return (
         <Layout additionalClass={['bg-white']}>
             <div className="flex flex-wrap max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-                <div className="flex basis-full md:basis-1/2 bg-primary">
+                <div className="flex basis-full md:basis-1/2">
                     1
                 </div>
                 <div className="flex basis-full md:basis-1/2 pl-0 md:pl-12 py-5">
