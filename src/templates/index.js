@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import Layout from '../layouts/layout';
+import Announcement from '../components/Announcement';
 
 const IndexPage = ({ data, pageContext }) => {
     const projects = data.allProject.nodes;
@@ -10,6 +11,7 @@ const IndexPage = ({ data, pageContext }) => {
             <Helmet>
                 <title>Flotiq Gatsby portfolio starter</title>
             </Helmet>
+            <Announcement additionalClass={['my-4']} message1="Hi! I am Joe Jonas" message2="welcome to my portfolio" />
             {projects.map((project) => (
                 <a href={`/${project.slug}`} key={project.id}>{project.name}</a>
             ))}
