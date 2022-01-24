@@ -1,16 +1,11 @@
 import React from 'react';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
-const ProjectHeaderImage = ({ headerImage, title }) => (
-    <div>
+const ProjectHeaderImage = ({ headerImage, name, additionalClass }) => (
+    <>
         {headerImage && (
-            <GatsbyImage
-                alt={title}
-                image={getImage(headerImage[0].localFile)}
-                className="w-full"
-            />
+            <img className={['w-full', ...additionalClass].join(' ')} src={headerImage} alt={name} />
         )}
-    </div>
+    </>
 );
 
 export default ProjectHeaderImage;

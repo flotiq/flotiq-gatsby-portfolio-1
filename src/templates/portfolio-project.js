@@ -7,9 +7,10 @@ const PortfolioProjectTemplate = ({ data }) => {
     const { project } = data;
     return (
         <Layout additionalClass={['bg-white']}>
-            <div className="flex max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-                <div className="flex basis-1/2">
+            <div className="flex flex-wrap max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+                <div className="flex basis-full md:basis-1/2">
                     <ProjectHeaderImage
+                        additionalClass={['']}
                         headerImage={project.headerImage[0] && project.headerImage[0].localFile.publicURL}
                         title={project.name}
                     />
