@@ -9,9 +9,7 @@ const PortfolioProjectTemplate = ({ data }) => {
     return (
         <Layout additionalClass={['bg-white']}>
             <div className="flex flex-wrap max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-                <div className="flex basis-full md:basis-1/2">
-                    1
-                </div>
+                <div className="flex basis-full md:basis-1/2" />
                 <div className="flex basis-full md:basis-1/2 pl-0 md:pl-12 py-5">
                     <ProjectName name={project.name} additionalClass={['mb-12 text-3xl md:text-4xl lg:text-5xl']} />
                 </div>
