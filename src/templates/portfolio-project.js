@@ -15,7 +15,7 @@ const PortfolioProjectTemplate = ({ data }) => {
                         title={project.name}
                     />
                 </div>
-                <div className="flex basis-1/2">2</div>
+                <div className="flex basis-1/2" />
             </div>
         </Layout>
     );
