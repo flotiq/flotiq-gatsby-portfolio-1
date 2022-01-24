@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import Layout from '../layouts/layout';
+import Contact from '../components/Contact';
 
 const IndexPage = ({ data, pageContext }) => {
     const projects = data.allProject.nodes;
@@ -13,6 +14,12 @@ const IndexPage = ({ data, pageContext }) => {
             {projects.map((project) => (
                 <a href={`/${project.slug}`} key={project.id}>{project.name}</a>
             ))}
+            <Contact
+                heading="Let's work together"
+                namInputLabel="Name"
+                messageInputLabel="Message"
+                buttonLabel="Send"
+            />
         </Layout>
     );
 };
