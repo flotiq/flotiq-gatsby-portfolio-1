@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../layouts/layout';
+import ProjectName from '../components/project/ProjectName';
 import ProjectHeaderImage from '../components/project/ProjectHeaderImage';
 
 const PortfolioProjectTemplate = ({ data }) => {
@@ -15,7 +16,9 @@ const PortfolioProjectTemplate = ({ data }) => {
                         title={project.name}
                     />
                 </div>
-                <div className="flex basis-1/2" />
+                <div className="flex basis-full md:basis-1/2 pl-0 md:pl-12 py-5">
+                    <ProjectName name={project.name} additionalClass={['mb-12 text-3xl md:text-4xl lg:text-5xl']} />
+                </div>
             </div>
         </Layout>
     );
