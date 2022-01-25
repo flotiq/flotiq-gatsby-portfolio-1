@@ -3,17 +3,16 @@ import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import Layout from '../layouts/layout';
 import Contact from '../components/Contact';
+import ProjectCards from '../sections/ProjectCards';
 
 const IndexPage = ({ data, pageContext }) => {
     const projects = data.allProject.nodes;
     return (
-        <Layout additionalClass={['bg-white']}>
+        <Layout additionalClass={['bg-light-gray md:bg-white']}>
             <Helmet>
                 <title>Flotiq Gatsby portfolio starter</title>
             </Helmet>
-            {projects.map((project) => (
-                <a href={`/${project.slug}`} key={project.id}>{project.name}</a>
-            ))}
+            <ProjectCards projects={projects} />
             <Contact
                 heading="Let's work together"
                 namInputLabel="Name"
@@ -37,6 +36,18 @@ export const pageQuery = graphql`
                 description
                 slug
                 name
+                headerImage {
+                    extension
+                    url
+                    width
+                    height
+                    localFile {
+                        publicURL
+                        childImageSharp {
+                            gatsbyImageData(layout: FULL_WIDTH)
+                        }
+                    }
+                }
                 gallery {
                     localFile {
                         publicURL

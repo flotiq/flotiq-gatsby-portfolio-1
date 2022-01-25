@@ -20,17 +20,29 @@ export const pageQuery = graphql`
             }
         }
         project( slug: { eq: $slug } ) {
-              id
-              description
-              slug
-              name
-              gallery {
-                  localFile {
-                      publicURL
-                  }
-              }
-          }
-      }
+            id
+            description
+            slug
+            name
+            headerImage {
+                extension
+                url
+                width
+                height
+                localFile {
+                    publicURL
+                    childImageSharp {
+                        gatsbyImageData(layout: FULL_WIDTH)
+                    }
+                }
+            }
+            gallery {
+                localFile {
+                  publicURL
+                }
+            }
+        }
+    }
 `;
 
 export default PortfolioProjectTemplate;
