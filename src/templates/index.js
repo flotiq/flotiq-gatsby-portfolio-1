@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import Layout from '../layouts/layout';
-import Contact from '../components/Contact';
 import ProjectCards from '../sections/ProjectCards';
 
 const IndexPage = ({ data, pageContext }) => {
@@ -13,12 +12,6 @@ const IndexPage = ({ data, pageContext }) => {
                 <title>Flotiq Gatsby portfolio starter</title>
             </Helmet>
             <ProjectCards projects={projects} />
-            <Contact
-                heading="Let's work together"
-                namInputLabel="Name"
-                messageInputLabel="Message"
-                buttonLabel="Send"
-            />
         </Layout>
     );
 };

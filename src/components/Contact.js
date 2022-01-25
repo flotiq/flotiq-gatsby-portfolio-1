@@ -61,9 +61,9 @@ const navigation = {
 };
 
 const Contact = ({ heading, namInputLabel, messageInputLabel, buttonLabel }) => (
-    <div className="w-full lg:w-2/4 xl:w-1/4 py-16 px-4 sm:px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12">
-        <div className="w-full mx-auto">
-            <h2 className="uppercase text-xl md:text-2xl mb-4 tracking-wide">{heading}</h2>
+    <div className="basis-full md:basis-2/4 lg:basis-1/4 px-1 cursor-pointer bg-white mb-5">
+        <div className="px-5">
+            <h2 className="uppercase text-lg md:text-xl mb-4 tracking-wide">{heading}</h2>
             <form action="#" method="POST" className="font-sora font-light flex flex-col space-y-4">
                 <div>
                     <label htmlFor="full-name" className="sr-only">
