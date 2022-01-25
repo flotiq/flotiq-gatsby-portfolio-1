@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import Layout from '../layouts/layout';
+import Announcement from '../components/Announcement';
 import ProjectCards from '../sections/ProjectCards';
 
 const IndexPage = ({ data, pageContext }) => {
@@ -11,6 +12,7 @@ const IndexPage = ({ data, pageContext }) => {
             <Helmet>
                 <title>Flotiq Gatsby portfolio starter</title>
             </Helmet>
+            <Announcement additionalClass={['my-4']} message1="Hi! I am Joe Jonas" message2="welcome to my portfolio" />
             <ProjectCards projects={projects} />
         </Layout>
     );
