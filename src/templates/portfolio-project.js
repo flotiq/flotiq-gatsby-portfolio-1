@@ -8,6 +8,11 @@ const PortfolioProjectTemplate = ({ data }) => {
     return (
         <Layout additionalClass={['bg-white']}>
             <div>1</div>
+            <div>
+                {project.gallery.map((image) => (
+                    <img src={image.localFile.publicURL} alt="" />
+                ))}
+            </div>
         </Layout>
     );
 };
