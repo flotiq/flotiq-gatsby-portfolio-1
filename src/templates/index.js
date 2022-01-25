@@ -7,7 +7,7 @@ import ProjectCards from '../sections/ProjectCards';
 const IndexPage = ({ data, pageContext }) => {
     const projects = data.allProject.nodes;
     return (
-        <Layout additionalClass={['bg-white']}>
+        <Layout additionalClass={['bg-light-gray md:bg-white']}>
             <Helmet>
                 <title>Flotiq Gatsby portfolio starter</title>
             </Helmet>

@@ -6,6 +6,7 @@ module.exports = {
         extend: {
             colors: {
                 primary: '#252525',
+                'light-gray': '#F9F9F9',
             },
             fontFamily: {
                 playfair: ['Playfair Display', 'sans-serif'],
