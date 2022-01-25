@@ -33,7 +33,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const projects = result.data.allProject.edges;
 
     // Create paginated index
-    const projectsPerPage = 4;
+    const projectsPerPage = 7;
     const numPages = Math.ceil(projects.length / projectsPerPage);
 
     Array.from({ length: numPages }).forEach((item, i) => {
