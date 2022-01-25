@@ -46,12 +46,12 @@ export const pageQuery = graphql`
                 }
             }
             gallery {
-              localFile {
+                localFile {
                   publicURL
-              }
+                }
             }
-          }
-      }
+        }
+    }
 `;
 
 export default PortfolioProjectTemplate;
