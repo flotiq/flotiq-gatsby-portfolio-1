@@ -5,22 +5,26 @@ exports.createPages = async ({ graphql, actions }) => {
 
     const portfolioProject = path.resolve('./src/templates/portfolio-project.js');
     const result = await graphql(`
-      query GetProjects {
-        allProject(sort: {order: DESC, fields: flotiqInternal___createdAt}) {
-            edges {
-              node {
-                description
-                slug
-                name
-                gallery {
-                  localFile {
-                    publicURL
-                  }
+        query GetProjects {
+            allProject(sort: {order: DESC, fields: flotiqInternal___createdAt}) {
+                edges {
+                    node {
+                    description
+                    slug
+                    name
+                    headerImage {
+                        extension
+                        id
+                    }
+                    gallery {
+                        localFile {
+                            publicURL
+                        }
+                    }
                 }
-              }
             }
-          }
         }
+    }
 `);
 
     if (result.errors) {
@@ -29,7 +33,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const projects = result.data.allProject.edges;
 
     // Create paginated index
-    const projectsPerPage = 4;
+    const projectsPerPage = 7;
     const numPages = Math.ceil(projects.length / projectsPerPage);
 
     Array.from({ length: numPages }).forEach((item, i) => {
