@@ -1,13 +1,16 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../layouts/layout';
+import ProjectBackButton from '../components/project/ProjectBackButton';
 
 const PortfolioProjectTemplate = ({ data }) => {
     const { project } = data;
 
     return (
         <Layout additionalClass={['bg-white']}>
-            <div>1</div>
+            <div className="flex flex-wrap max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+                <ProjectBackButton additionalClass={['my-5']} backButtonText="Back to the main page" />
+            </div>
         </Layout>
     );
 };
