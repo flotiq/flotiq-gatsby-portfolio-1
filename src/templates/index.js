@@ -6,12 +6,12 @@ import Layout from '../layouts/layout';
 const IndexPage = ({ data, pageContext }) => {
     const projects = data.allProject.nodes;
     return (
-        <Layout additionalClass={['bg-white']}>
+        <Layout additionalClass={['bg-light-gray md:bg-white']}>
             <Helmet>
                 <title>Flotiq Gatsby portfolio starter</title>
             </Helmet>
             {projects.map((project) => (
-                <a href={`/${project.slug}`} key={project.id}>{project.name}</a>
+                <a className="flex" href={`/${project.slug}`} key={project.id}>{project.name}</a>
             ))}
         </Layout>
     );
