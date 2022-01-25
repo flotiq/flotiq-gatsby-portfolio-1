@@ -4,7 +4,7 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import Logo from '../assets/Logo.svg';
 
 const Header = () => (
-    <Disclosure as="nav" className="bg-white">
+    <Disclosure as="nav">
         {({ open }) => (
             <>
                 <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -28,12 +28,7 @@ const Header = () => (
                         >
                             <div className="flex-shrink-0 flex items-center">
                                 <img
-                                    className="block lg:hidden h-14 w-auto"
-                                    src={Logo}
-                                    alt="Workflow"
-                                />
-                                <img
-                                    className="hidden lg:block h-14 w-auto"
+                                    className="h-10 md:h-14 w-auto"
                                     src={Logo}
                                     alt="Workflow"
                                 />
