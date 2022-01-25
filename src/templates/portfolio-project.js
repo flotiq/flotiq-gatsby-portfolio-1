@@ -17,7 +17,7 @@ const PortfolioProjectTemplate = ({ data }) => {
                         title={project.name}
                     />
                 </div>
-                <div className="flex basis-full md:basis-1/2 pl-0 md:pl-12 py-5">
+                <div className="flex flex-col basis-full md:basis-1/2 pl-0 md:pl-12 py-5">
                     <ProjectName name={project.name} additionalClass={['mb-12 text-3xl md:text-4xl lg:text-5xl']} />
                     <ProjectDescription description={project.description} additionalClass={['text-base md:text-lg']} />
                 </div>
