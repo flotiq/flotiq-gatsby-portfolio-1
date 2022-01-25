@@ -4,11 +4,15 @@ import Layout from '../layouts/layout';
 import ProjectDescription from '../components/portfolio/ProjectDescription';
 import ProjectName from '../components/project/ProjectName';
 import ProjectHeaderImage from '../components/project/ProjectHeaderImage';
+import ProjectBackButton from '../components/project/ProjectBackButton';
 
 const PortfolioProjectTemplate = ({ data }) => {
     const { project } = data;
     return (
         <Layout additionalClass={['bg-white']}>
+            <div className="flex flex-wrap max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+                <ProjectBackButton additionalClass={['my-5']} backButtonText="Back to the main page" />
+            </div>
             <div className="flex flex-wrap max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
                 <div className="flex basis-full md:basis-1/2">
                     <ProjectHeaderImage
