@@ -15,8 +15,11 @@ const ProjectGallery = ({ gallery, galleryName, galleryDescription, name }) => {
             <div className="flex basis-full md:basis-3/4">
                 <Carousel
                     images={images}
-                    showPlayButton={false}
-                    showThumbnails={false}
+                    hasMediaButton={false}
+                    hasSizeButton={false}
+                    hasIndexBoard={false}
+                    hasThumbnails={false}
+
                 />
             </div>
         </div>
