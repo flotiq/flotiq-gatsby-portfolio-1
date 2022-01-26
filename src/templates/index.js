@@ -48,6 +48,19 @@ export const pageQuery = graphql`
                         publicURL
                     }
                 }
+                contactImage {
+                    extension
+                    url
+                    width
+                    height
+                    localFile {
+                        publicURL
+                        childImageSharp {
+                            gatsbyImageData(layout: FULL_WIDTH)
+                        }
+                    }
+                }
+
             }
         }
     }

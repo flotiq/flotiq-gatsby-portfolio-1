@@ -60,62 +60,62 @@ const navigation = {
     ],
 };
 
-const Contact = ({ heading, namInputLabel, messageInputLabel, buttonLabel }) => (
-    <div className="basis-full md:basis-2/4 lg:basis-1/4 px-1 cursor-pointer bg-white mb-5">
-        <div className="px-5">
-            <h2 className="uppercase text-lg md:text-xl mb-4 tracking-wide">{heading}</h2>
-            <form action="#" method="POST" className="font-sora font-light flex flex-col space-y-4">
-                <div>
-                    <label htmlFor="full-name" className="sr-only">
-                        {namInputLabel}
-                    </label>
-                    <input
-                        type="text"
-                        name="full-name"
-                        id="full-name"
-                        autoComplete="name"
-                        className="block w-full py-3 px-4 placeholder-primary/25 bg-gray border-none"
-                        placeholder="Your name"
-                    />
-                </div>
-                <div>
-                    <label htmlFor="message" className="sr-only">
-                        {messageInputLabel}
-                    </label>
-                    <textarea
-                        id="message"
-                        name="message"
-                        rows={4}
-                        className="block w-full py-3 px-4 placeholder-primary/25 bg-gray border-none"
-                        placeholder="Message"
-                        defaultValue=""
-                    />
-                </div>
-                <div className="text-right">
-                    <button
-                        type="submit"
-                        className="inline-flex justify-center py-3 px-10 text-base
+const Contact = ({ heading, namInputLabel, messageInputLabel, buttonLabel, additionalClass }) => (
+    <div className={['basis-full md:basis-2/4 lg:basis-1/4 '
+    + 'cursor-pointer bg-white mb-5', ...additionalClass].join(' ')}
+    >
+        <h2 className="uppercase text-lg md:text-xl mb-4 tracking-wide">{heading}</h2>
+        <form action="#" method="POST" className="font-sora font-light flex flex-col space-y-4">
+            <div>
+                <label htmlFor="full-name" className="sr-only">
+                    {namInputLabel}
+                </label>
+                <input
+                    type="text"
+                    name="full-name"
+                    id="full-name"
+                    autoComplete="name"
+                    className="block w-full py-3 px-4 placeholder-primary/25 bg-gray border-none"
+                    placeholder="Your name"
+                />
+            </div>
+            <div>
+                <label htmlFor="message" className="sr-only">
+                    {messageInputLabel}
+                </label>
+                <textarea
+                    id="message"
+                    name="message"
+                    rows={4}
+                    className="block w-full py-3 px-4 placeholder-primary/25 bg-gray border-none"
+                    placeholder="Message"
+                    defaultValue=""
+                />
+            </div>
+            <div className="text-right">
+                <button
+                    type="submit"
+                    className="inline-flex justify-center py-3 px-10 text-base
                          font-medium text-white bg-primary"
-                    >
-                        {buttonLabel}
-                    </button>
-                </div>
-            </form>
-            <div className="mt-12 flex items-center justify-between">
-                <img src={Logo} className="h-10" alt="" />
-                <div className="flex items-center justify-center space-x-4 md:space-x-3">
-                    {navigation.social.map((item) => (
-                        <a
-                            key={item.name}
-                            href={item.href}
-                            className="text-primary/50 hover:text-primary
+                >
+                    {buttonLabel}
+                </button>
+            </div>
+        </form>
+        <div className="mt-12 flex items-center justify-between">
+            <img src={Logo} className="h-10" alt="" />
+            <div className="flex items-center justify-center space-x-4 md:space-x-3">
+                {navigation.social.map((item) => (
+                    <a
+                        key={item.name}
+                        href={item.href}
+                        className="text-primary/50 hover:text-primary
                                 p-3 bg-gray rounded"
-                        >
-                            <span className="sr-only">{item.name}</span>
-                            <item.icon className="h-5 w-5" aria-hidden="true" />
-                        </a>
-                    ))}
-                </div>
+                    >
+                        <span className="sr-only">{item.name}</span>
+                        <item.icon className="h-5 w-5" aria-hidden="true" />
+                    </a>
+                ))}
             </div>
         </div>
     </div>

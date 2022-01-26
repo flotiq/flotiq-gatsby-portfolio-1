@@ -5,6 +5,8 @@ import ProjectDescription from '../components/portfolio/ProjectDescription';
 import ProjectName from '../components/project/ProjectName';
 import ProjectHeaderImage from '../components/project/ProjectHeaderImage';
 import ProjectBackButton from '../components/project/ProjectBackButton';
+import Contact from '../components/Contact';
+import ProjectContactImage from '../components/project/ProjectContactImage';
 
 const PortfolioProjectTemplate = ({ data }) => {
     const { project } = data;
@@ -25,6 +27,20 @@ const PortfolioProjectTemplate = ({ data }) => {
                     <ProjectName name={project.name} additionalClass={['mb-12 text-3xl md:text-4xl lg:text-5xl']} />
                     <ProjectDescription description={project.description} additionalClass={['text-base md:text-lg']} />
                 </div>
+            </div>
+            <div className="flex flex-wrap md:flex-nowrap justify-center max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 py-20">
+                <Contact
+                    heading="Let's work together"
+                    namInputLabel="Name"
+                    messageInputLabel="Message"
+                    buttonLabel="Send"
+                    additionalClass={['']}
+                />
+                <ProjectContactImage
+                    additionalClass={['ml-5 max-h-72 hidden md:block']}
+                    contactImage={project.contactImage[0] && project.contactImage[0].localFile.publicURL}
+                    title={project.name}
+                />
             </div>
         </Layout>
     );
@@ -57,6 +73,18 @@ export const pageQuery = graphql`
             gallery {
                 localFile {
                   publicURL
+                }
+            }
+            contactImage {
+                extension
+                url
+                width
+                height
+                localFile {
+                    publicURL
+                    childImageSharp {
+                        gatsbyImageData(layout: FULL_WIDTH)
+                    }
                 }
             }
         }

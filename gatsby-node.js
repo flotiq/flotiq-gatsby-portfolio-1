@@ -21,6 +21,10 @@ exports.createPages = async ({ graphql, actions }) => {
                             publicURL
                         }
                     }
+                    contactImage {
+                        extension
+                        id
+                    }
                 }
             }
         }
