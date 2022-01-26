@@ -16,6 +16,8 @@ exports.createPages = async ({ graphql, actions }) => {
                         extension
                         id
                     }
+                    gallery_name
+                    gallery_description
                     gallery {
                         localFile {
                             publicURL

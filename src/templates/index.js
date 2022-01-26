@@ -43,6 +43,8 @@ export const pageQuery = graphql`
                         }
                     }
                 }
+                gallery_name
+                gallery_description
                 gallery {
                     localFile {
                         publicURL

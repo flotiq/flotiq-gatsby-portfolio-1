@@ -1,10 +1,11 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../layouts/layout';
-import ProjectDescription from '../components/portfolio/ProjectDescription';
+import ProjectDescription from '../components/project/ProjectDescription';
 import ProjectName from '../components/project/ProjectName';
 import ProjectHeaderImage from '../components/project/ProjectHeaderImage';
 import ProjectBackButton from '../components/project/ProjectBackButton';
+import ProjectGallery from '../components/project/ProjectGallery';
 
 const PortfolioProjectTemplate = ({ data }) => {
     const { project } = data;
@@ -13,7 +14,7 @@ const PortfolioProjectTemplate = ({ data }) => {
             <div className="flex flex-wrap max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
                 <ProjectBackButton additionalClass={['my-5']} backButtonText="Back to the main page" />
             </div>
-            <div className="flex flex-wrap max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+            <div className="flex flex-wrap max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 pb-10">
                 <div className="flex basis-full md:basis-1/2">
                     <ProjectHeaderImage
                         additionalClass={['']}
@@ -26,11 +27,13 @@ const PortfolioProjectTemplate = ({ data }) => {
                     <ProjectDescription description={project.description} additionalClass={['text-base md:text-lg']} />
                 </div>
             </div>
-            <div>
-                {project.gallery.map((image) => (
-                    <img src={image.localFile.publicURL} alt="" />
-                ))}
-            </div>
+            <ProjectGallery
+                galleryName={project.gallery_name}
+                galleryDescription={project.gallery_description}
+                additionalClass={['text-base md:']}
+                gallery={project.gallery}
+                name={project.name}
+            />
         </Layout>
     );
 };
@@ -59,6 +62,8 @@ export const pageQuery = graphql`
                     }
                 }
             }
+            gallery_name
+            gallery_description
             gallery {
                 localFile {
                   publicURL
