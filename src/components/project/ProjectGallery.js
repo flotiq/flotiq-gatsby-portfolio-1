@@ -32,7 +32,7 @@ const ProjectGallery = ({ gallery, galleryName, galleryDescription, name }) => {
                     ref={imageGallery}
                     renderLeftNav={() => (
                         <LeftNav
-                            disabled={imageGallery.current.getCurrentIndex() === 1}
+                            disabled={imageGallery.current?.getCurrentIndex() === 1}
                             onClick={() => imageGallery.current?.slideToIndex(
                                 imageGallery.current.getCurrentIndex() - 1,
                             )}
