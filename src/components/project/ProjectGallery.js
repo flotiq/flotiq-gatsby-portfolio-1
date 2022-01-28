@@ -1,14 +1,12 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import ImageGallery from 'react-image-gallery';
 
 const ProjectGallery = ({ gallery, galleryName, galleryDescription, name }) => {
     const images = gallery.map((image) => ({
         original: image.localFile.publicURL,
     }));
-    const LeftNav = React.memo(({
-        disabled,
-        onClick,
-    }) => (
+    const imageGallery = useRef(null);
+    const LeftNav = React.memo(({ disabled, onClick }) => (
         <button
             type="button"
             className="image-gallery-icon image-gallery-left-nav"
@@ -31,8 +29,16 @@ const ProjectGallery = ({ gallery, galleryName, galleryDescription, name }) => {
                     items={images}
                     showFullscreenButton={false}
                     showPlayButton={false}
+                    ref={imageGallery}
+                    renderLeftNav={() => (
+                        <LeftNav
+                            disabled={imageGallery.current.getCurrentIndex() === 1}
+                            onClick={() => imageGallery.current?.slideToIndex(
+                                imageGallery.current.getCurrentIndex() - 1,
+                            )}
+                        />
+                    )}
                 />
-                <LeftNav onClick={onClick} disabled={disabled} />
             </div>
         </div>
     );
