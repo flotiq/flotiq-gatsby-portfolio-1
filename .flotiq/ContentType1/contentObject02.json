@@ -1,19 +1,19 @@
 {
-  "id": "project-1",
-  "name": "Project 1",
-  "slug": "project-1",
+  "id": "project-2",
+  "name": "Project 2",
+  "slug": "project-2",
   "gallery": [
     {
       "type": "internal",
-      "dataUrl": "/api/v1/content/_media/_media-5e1c360c93ab7"
+      "dataUrl": "/api/v1/content/_media/_media-5e03d26d55cf8"
     },
     {
       "type": "internal",
-      "dataUrl": "/api/v1/content/_media/_media-5e1c3611c3927"
+      "dataUrl": "/api/v1/content/_media/_media-5e1c35ebec099"
     },
     {
       "type": "internal",
-      "dataUrl": "/api/v1/content/_media/_media-5dd29fe9a4804"
+      "dataUrl": "/api/v1/content/_media/_media-5e1c35efa388a"
     }
   ],
   "description": "<p>Here will be an awesome description of this awesome Project! Check out our other awesome projects!</p>\n"

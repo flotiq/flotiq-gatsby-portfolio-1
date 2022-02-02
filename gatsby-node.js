@@ -9,22 +9,11 @@ exports.createPages = async ({ graphql, actions }) => {
             allProject(sort: {order: DESC, fields: flotiqInternal___createdAt}) {
                 edges {
                     node {
-                    description
-                    slug
-                    name
-                    headerImage {
-                        extension
-                        id
-                    }
-                    gallery {
-                        localFile {
-                            publicURL
-                        }
+                        slug
                     }
                 }
             }
         }
-    }
 `);
 
     if (result.errors) {
