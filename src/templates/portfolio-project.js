@@ -1,9 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Image } from 'flotiq-components-react';
+import { Image, Header } from 'flotiq-components-react';
 import Layout from '../layouts/layout';
 import ProjectDescription from '../components/project/ProjectDescription';
-import ProjectName from '../components/project/ProjectName';
 import ProjectBackButton from '../components/project/ProjectBackButton';
 
 const PortfolioProjectTemplate = ({ data }) => {
@@ -21,7 +20,10 @@ const PortfolioProjectTemplate = ({ data }) => {
                     />
                 </div>
                 <div className="flex flex-col basis-full md:basis-1/2 pl-0 md:pl-12 py-5">
-                    <ProjectName name={project.name} additionalClass={['mb-12 text-3xl md:text-4xl lg:text-5xl']} />
+                    <Header
+                        text={project.name}
+                        additionalClasses={['uppercase mb-12 !text-3xl md:!text-4xl lg:!text-5xl']}
+                    />
                     <ProjectDescription description={project.description} additionalClass={['text-base md:text-lg']} />
                 </div>
             </div>
