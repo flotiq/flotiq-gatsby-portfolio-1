@@ -1,12 +1,13 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { Image } from 'flotiq-components-react';
 import Layout from '../layouts/layout';
 import ProjectDescription from '../components/portfolio/ProjectDescription';
 import ProjectName from '../components/project/ProjectName';
 import ProjectHeaderImage from '../components/project/ProjectHeaderImage';
 import ProjectBackButton from '../components/project/ProjectBackButton';
 import Contact from '../components/Contact';
-import ProjectContactImage from '../components/project/ProjectContactImage';
+import ContactImage from '../assets/contact-image.jpg';
 
 const PortfolioProjectTemplate = ({ data }) => {
     const { project } = data;
@@ -36,11 +37,7 @@ const PortfolioProjectTemplate = ({ data }) => {
                     buttonLabel="Send"
                     additionalClass={['']}
                 />
-                <ProjectContactImage
-                    additionalClass={['ml-5 max-h-72 hidden md:block']}
-                    contactImage={project.contactImage[0] && project.contactImage[0].localFile.publicURL}
-                    title={project.name}
-                />
+                <Image url={ContactImage} additionalClasses={['w-auto ml-5 max-h-72 hidden md:block']} />
             </div>
         </Layout>
     );
@@ -73,18 +70,6 @@ export const pageQuery = graphql`
             gallery {
                 localFile {
                   publicURL
-                }
-            }
-            contactImage {
-                extension
-                url
-                width
-                height
-                localFile {
-                    publicURL
-                    childImageSharp {
-                        gatsbyImageData(layout: FULL_WIDTH)
-                    }
                 }
             }
         }
