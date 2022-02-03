@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { Image } from 'flotiq-components-react';
 import Layout from '../layouts/layout';
-import ProjectDescription from '../components/portfolio/ProjectDescription';
+import ProjectDescription from '../components/project/ProjectDescription';
 import ProjectName from '../components/project/ProjectName';
 import ProjectHeaderImage from '../components/project/ProjectHeaderImage';
 import ProjectBackButton from '../components/project/ProjectBackButton';
