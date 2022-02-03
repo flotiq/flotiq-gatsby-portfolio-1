@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Image, Header } from 'flotiq-components-react';
+import { Image, Header, Paragraph } from 'flotiq-components-react';
 import Layout from '../layouts/layout';
 import ProjectDescription from '../components/project/ProjectDescription';
 import ProjectBackButton from '../components/project/ProjectBackButton';
@@ -24,7 +24,10 @@ const PortfolioProjectTemplate = ({ data }) => {
                         text={project.name}
                         additionalClasses={['uppercase mb-12 !text-3xl md:!text-4xl lg:!text-5xl']}
                     />
-                    <ProjectDescription description={project.description} additionalClass={['text-base md:text-lg']} />
+                    <Paragraph
+                        text={project.description}
+                        additionalClasses={['!text-base md:!text-lg font-light font-sora']}
+                    />
                 </div>
             </div>
         </Layout>
