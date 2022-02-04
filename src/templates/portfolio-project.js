@@ -3,6 +3,8 @@ import { graphql } from 'gatsby';
 import { Image, Header, Paragraph } from 'flotiq-components-react';
 import Layout from '../layouts/layout';
 import ProjectBackButton from '../components/project/ProjectBackButton';
+import Contact from '../components/Contact';
+import ContactImage from '../assets/contact-image.jpg';
 
 const PortfolioProjectTemplate = ({ data }) => {
     const { project } = data;
@@ -28,6 +30,16 @@ const PortfolioProjectTemplate = ({ data }) => {
                         additionalClasses={['!text-base md:!text-lg font-light font-sora']}
                     />
                 </div>
+            </div>
+            <div className="flex flex-wrap md:flex-nowrap justify-center max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 py-20">
+                <Contact
+                    heading="Let's work together"
+                    namInputLabel="Name"
+                    messageInputLabel="Message"
+                    buttonLabel="Send"
+                    additionalClass={['']}
+                />
+                <Image url={ContactImage} additionalClasses={['w-auto ml-5 max-h-72 hidden md:block']} />
             </div>
         </Layout>
     );
