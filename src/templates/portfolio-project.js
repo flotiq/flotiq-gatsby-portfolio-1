@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { Image, Header, Paragraph } from 'flotiq-components-react';
 import Layout from '../layouts/layout';
-import ProjectDescription from '../components/project/ProjectDescription';
 import ProjectBackButton from '../components/project/ProjectBackButton';
 
 const PortfolioProjectTemplate = ({ data }) => {
@@ -16,7 +15,7 @@ const PortfolioProjectTemplate = ({ data }) => {
                 <div className="flex basis-full md:basis-1/2">
                     <Image
                         url={project.headerImage[0] && project.headerImage[0].localFile.publicURL}
-                        additionalClasses={['w-full']}
+                        stretched
                     />
                 </div>
                 <div className="flex flex-col basis-full md:basis-1/2 pl-0 md:pl-12 py-5">
