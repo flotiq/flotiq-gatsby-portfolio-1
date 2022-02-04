@@ -1,9 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { Image, Header, Paragraph } from 'flotiq-components-react';
 import Layout from '../layouts/layout';
-import ProjectDescription from '../components/project/ProjectDescription';
-import ProjectName from '../components/project/ProjectName';
-import ProjectHeaderImage from '../components/project/ProjectHeaderImage';
 import ProjectBackButton from '../components/project/ProjectBackButton';
 
 const PortfolioProjectTemplate = ({ data }) => {
@@ -15,15 +13,20 @@ const PortfolioProjectTemplate = ({ data }) => {
             </div>
             <div className="flex flex-wrap max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
                 <div className="flex basis-full md:basis-1/2">
-                    <ProjectHeaderImage
-                        additionalClass={['']}
-                        headerImage={project.headerImage[0] && project.headerImage[0].localFile.publicURL}
-                        title={project.name}
+                    <Image
+                        url={project.headerImage[0] && project.headerImage[0].localFile.publicURL}
+                        stretched
                     />
                 </div>
                 <div className="flex flex-col basis-full md:basis-1/2 pl-0 md:pl-12 py-5">
-                    <ProjectName name={project.name} additionalClass={['mb-12 text-3xl md:text-4xl lg:text-5xl']} />
-                    <ProjectDescription description={project.description} additionalClass={['text-base md:text-lg']} />
+                    <Header
+                        text={project.name}
+                        additionalClasses={['uppercase mb-12 !text-3xl md:!text-4xl lg:!text-5xl']}
+                    />
+                    <Paragraph
+                        text={project.description}
+                        additionalClasses={['!text-base md:!text-lg font-light font-sora']}
+                    />
                 </div>
             </div>
         </Layout>
