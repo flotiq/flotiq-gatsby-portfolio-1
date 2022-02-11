@@ -2,7 +2,7 @@
     <img src="https://editor.flotiq.com/fonts/fq-logo.svg" alt="Flotiq logo" title="Flotiq" align="right" height="60" />
 </a>
 
-Gatsby starter boilerplate with Flotiq source
+Gatsby starter for projects portfolio with Flotiq source
 ===========================
 
 Kick off your project with this hello-world boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
