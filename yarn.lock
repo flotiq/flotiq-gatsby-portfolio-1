@@ -5290,8 +5290,8 @@ flatted@^3.1.0:
   integrity sha512-8/sOawo8tJ4QOBX8YlQBMxL8+RLZfxMQOif9o0KUKTNTjMYElWPE0r/m5VNFxTRd0NSw8qSy8dajrwX4RYI1Hw==
 
 "flotiq-components-react@https://github.com/flotiq/flotiq-components-react.git":
-  version "0.4.0"
-  resolved "https://github.com/flotiq/flotiq-components-react.git#16bdd3e9a0276146f07f3fcd9f3f174a9f04e320"
+  version "0.4.1"
+  resolved "https://github.com/flotiq/flotiq-components-react.git#e4f4040ff1351dbecfca8981139da1ab02e6ebd9"
 
 follow-redirects@^1.0.0, follow-redirects@^1.14.0:
   version "1.14.6"
