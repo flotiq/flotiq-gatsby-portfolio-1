@@ -37,12 +37,12 @@ const ProjectGallery = ({ gallery, galleryName, galleryDescription, name }) => {
     ));
 
     return (
-        <div className="flex flex-wrap items-center max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 pt-10 pb-24">
-            <div className="basis-full md:basis-1/4 pr-5 mb-6 md:mb-0">
+        <div className="grid grid-cols-4 max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 pt-10 pb-24">
+            <div className="pr-5 mb-6 md:mb-0">
                 <h2 className="font-semibold text-2xl mb-5" dangerouslySetInnerHTML={{ __html: galleryName }} />
                 <p className="font-sora font-lg" dangerouslySetInnerHTML={{ __html: galleryDescription }} />
             </div>
-            <div className="flex basis-full md:basis-3/4">
+            <div className="col-span-3">
                 <ImageGallery
                     items={images}
                     showFullscreenButton={false}

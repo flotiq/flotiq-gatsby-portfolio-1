@@ -32,6 +32,13 @@ const PortfolioProjectTemplate = ({ data }) => {
                     />
                 </div>
             </div>
+            <ProjectGallery
+                galleryName={project.gallery_name}
+                galleryDescription={project.gallery_description}
+                additionalClass={['text-base md:']}
+                gallery={project.gallery}
+                name={project.name}
+            />
             <div className="flex flex-wrap md:flex-nowrap justify-center max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 py-20">
                 <Contact
                     heading="Let's work together"
@@ -42,13 +49,6 @@ const PortfolioProjectTemplate = ({ data }) => {
                 />
                 <Image url={ContactImage} additionalClasses={['w-auto ml-5 max-h-72 hidden md:block']} />
             </div>
-            <ProjectGallery
-                galleryName={project.gallery_name}
-                galleryDescription={project.gallery_description}
-                additionalClass={['text-base md:']}
-                gallery={project.gallery}
-                name={project.name}
-            />
         </Layout>
     );
 };
