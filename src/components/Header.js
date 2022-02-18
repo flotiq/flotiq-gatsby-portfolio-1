@@ -26,12 +26,15 @@ const Header = () => (
                         <div className="flex-1 flex items-center justify-center
                         sm:items-stretch sm:justify-start order-2 sm:order-1"
                         >
+
                             <div className="flex-shrink-0 flex items-center">
-                                <img
-                                    className="h-10 md:h-14 w-auto"
-                                    src={Logo}
-                                    alt="Workflow"
-                                />
+                                <a href="/">
+                                    <img
+                                        className="h-10 md:h-14 w-auto"
+                                        src={Logo}
+                                        alt="Workflow"
+                                    />
+                                </a>
                             </div>
                         </div>
                         <div className="flex items-center order-1 sm:order-2">

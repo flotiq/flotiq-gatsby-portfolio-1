@@ -19,6 +19,7 @@ const ProjectCards = ({ projects }) => (
             namInputLabel="Name"
             messageInputLabel="Message"
             buttonLabel="Send"
+            additionalClass={['px-5']}
         />
     </div>
 );
