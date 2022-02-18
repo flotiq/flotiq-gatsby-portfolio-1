@@ -1,73 +1,59 @@
-import React, { useRef } from 'react';
-import ImageGallery from 'react-image-gallery';
+import React from 'react';
+import Carousel from 'react-multi-carousel';
+import { Image, Header, Paragraph } from 'flotiq-components-react';
 import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/solid';
 
-const ProjectGallery = ({ gallery, galleryName, galleryDescription, name }) => {
-    const images = gallery.map((image) => ({
-        original: image.localFile.publicURL,
-    }));
-    const imageGallery = useRef(null);
-    const LeftNav = React.memo(({ disabled, onClick }) => (
-        <button
-            type="button"
-            className="flex items-center justify-start !p-0 image-gallery-icon image-gallery-left-nav left-0
-            !right-auto -bottom-14 !top-auto underline !text-primary font-sora !drop-shadow-none !transform-none
-            text-sm md:text-base"
-            disabled={disabled}
-            onClick={onClick}
-            aria-label="Previous Slide"
-        >
-            <ArrowLeftIcon className="mr-3 h-5 w-5 text-primary" />
-            Previous work
-        </button>
-    ));
-    const RightNav = React.memo(({ disabled, onClick }) => (
-        <button
-            type="button"
-            className="flex items-center justify-end !p-0 image-gallery-icon image-gallery-left-nav right-0
-            !left-auto -bottom-14 !top-auto underline !text-primary font-sora !drop-shadow-none !transform-none
-            text-sm md:text-base"
-            disabled={disabled}
-            onClick={onClick}
-            aria-label="Next Slide"
-        >
-            Next work
-            <ArrowRightIcon className="ml-3 h-5 w-5 text-primary" />
-        </button>
-    ));
-
+const responsive = {
+    desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 3,
+    },
+    tablet: {
+        breakpoint: { max: 1024, min: 464 },
+        items: 2,
+    },
+    mobile: {
+        breakpoint: { max: 464, min: 0 },
+        items: 1,
+    },
+};
+const CarouselNavigation = ({ goToSlide, ...rest }) => {
+    const { carouselState: { currentSlide } } = rest;
     return (
-        <div className="grid grid-cols-4 max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 pt-10 pb-24">
-            <div className="pr-5 mb-6 md:mb-0">
-                <h2 className="font-semibold text-2xl mb-5" dangerouslySetInnerHTML={{ __html: galleryName }} />
-                <p className="font-sora font-lg" dangerouslySetInnerHTML={{ __html: galleryDescription }} />
+        <div className="md:w-3/4 m-auto flex items-center justify-between font-sora underline font-light text-sm mt-5">
+            <div className="cursor-pointer flex items-center" onClick={() => goToSlide(currentSlide - 1)}>
+                <ArrowLeftIcon className="mr-3 h-5 w-5 text-primary" />
+                Previous work
             </div>
-            <div className="col-span-3">
-                <ImageGallery
-                    items={images}
-                    showFullscreenButton={false}
-                    showPlayButton={false}
-                    ref={imageGallery}
-                    renderLeftNav={() => (
-                        <LeftNav
-                            disabled={imageGallery.current?.getCurrentIndex() === 1}
-                            onClick={() => imageGallery.current?.slideToIndex(
-                                imageGallery.current.getCurrentIndex() - 1,
-                            )}
-                        />
-                    )}
-                    renderRightNav={() => (
-                        <RightNav
-                            disabled={imageGallery.current?.getCurrentIndex() === -1}
-                            onClick={() => imageGallery.current?.slideToIndex(
-                                imageGallery.current.getCurrentIndex() + 1,
-                            )}
-                        />
-                    )}
-                />
+            <div className="cursor-pointer flex items-center" onClick={() => goToSlide(currentSlide + 1)}>
+                Next work
+                <ArrowRightIcon className="ml-3 h-5 w-5 text-primary" />
             </div>
         </div>
     );
 };
+
+const ProjectGallery = ({ gallery, galleryName, galleryDescription }) => (
+    <div className="grid grid-cols-1 md:grid-cols-4 max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 pt-10 pb-24">
+        <div className="pr-5 mb-6 md:mb-0">
+            <Header text={galleryName} additionalClasses={['!text-2xl mb-5']} />
+            <Paragraph text={galleryDescription} additionalClasses={['!font-lg font-sora']} />
+        </div>
+        <div className="col-span-3">
+            <Carousel
+                infinite
+                autoplay={false}
+                responsive={responsive}
+                arrows={false}
+                renderButtonGroupOutside
+                customButtonGroup={<CarouselNavigation />}
+            >
+                {gallery.map((image) => (
+                    <Image url={image.localFile.publicURL} additionalClasses={['px-2']} />
+                ))}
+            </Carousel>
+        </div>
+    </div>
+);
 
 export default ProjectGallery;
