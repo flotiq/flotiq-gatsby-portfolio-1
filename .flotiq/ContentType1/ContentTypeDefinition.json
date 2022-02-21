@@ -12,11 +12,11 @@
         "properties": {
           "name": {
             "type": "string",
-            "pattern": "^[a-zA-Z0-9-_]*$",
             "minLength": 1
           },
           "slug": {
             "type": "string",
+            "pattern": "^[a-zA-Z0-9-_]*$",
             "minLength": 1
           },
           "description": {
