@@ -41,6 +41,7 @@ const ProjectGallery = ({ gallery, galleryName, galleryDescription }) => (
         </div>
         <div className="col-span-3">
             <Carousel
+                draggable={false}
                 infinite
                 autoplay={false}
                 responsive={responsive}
@@ -49,7 +50,7 @@ const ProjectGallery = ({ gallery, galleryName, galleryDescription }) => (
                 customButtonGroup={<CarouselNavigation />}
             >
                 {gallery.map((image) => (
-                    <Image url={image.localFile.publicURL} additionalClasses={['px-2']} />
+                    <Image url={image.localFile.publicURL} additionalClasses={['px-2']} key={image.id} />
                 ))}
             </Carousel>
         </div>
