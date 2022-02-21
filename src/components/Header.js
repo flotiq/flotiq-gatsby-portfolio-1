@@ -1,6 +1,7 @@
 import React from 'react';
 import { Disclosure } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
+import { Link } from 'gatsby';
 import Logo from '../assets/Logo.svg';
 
 const Header = () => (
@@ -28,13 +29,13 @@ const Header = () => (
                         >
 
                             <div className="flex-shrink-0 flex items-center">
-                                <a href="/">
+                                <Link to="/">
                                     <img
                                         className="h-10 md:h-14 w-auto"
                                         src={Logo}
                                         alt="Workflow"
                                     />
-                                </a>
+                                </Link>
                             </div>
                         </div>
                         <div className="flex items-center order-1 sm:order-2">

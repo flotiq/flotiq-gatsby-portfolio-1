@@ -7,6 +7,8 @@ Gatsby starter for projects portfolio with Flotiq source
 
 Kick off your project with this hello-world boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
 
+Live Demo: https://flotiqgatsbyportfolio1.gatsbyjs.io
+
 ## Quick start
 
 1. **Start the project from template using [Flotiq CLI]((https://github.com/flotiq/flotiq-cli))**
