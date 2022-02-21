@@ -1,5 +1,5 @@
 [build]
-  command = "gatsby build"
+  command = "gatsby clean && gatsby build"
   publish = "public/"
 
 [template.environment]

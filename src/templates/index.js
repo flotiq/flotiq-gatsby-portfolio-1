@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
+import { Announcement, Pagination } from 'flotiq-components-react';
 import Layout from '../layouts/layout';
-import Announcement from '../components/Announcement';
 import ProjectCards from '../sections/ProjectCards';
 
 const IndexPage = ({ data, pageContext }) => {
@@ -12,8 +12,19 @@ const IndexPage = ({ data, pageContext }) => {
             <Helmet>
                 <title>Flotiq Gatsby portfolio starter</title>
             </Helmet>
-            <Announcement additionalClass={['my-4']} message1="Hi! I am Joe Jonas" message2="welcome to my portfolio" />
+            <Announcement
+                variant="transparent"
+                content={(
+                    <h1 className="max-w-4xl flex flex-wrap md:flex-nowrap items-center
+                     justify-center md:justify-between mx-auto px-2 sm:px-6 lg:px-8 uppercase"
+                    >
+                        <span className="text-3xl mb-4 mx-1 text-center">Hi! I am Joe Jonas</span>
+                        <span className="text-3xl mb-4 mx-1 text-center">welcome to my portfolio</span>
+                    </h1>
+                )}
+            />
             <ProjectCards projects={projects} />
+            <Pagination page={pageContext.currentPage} numOfPages={pageContext.numPages} rounded="none" />
         </Layout>
     );
 };

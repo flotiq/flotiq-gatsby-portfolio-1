@@ -1,6 +1,6 @@
 {
-  "name": "example",
-  "label": "Example",
+  "name": "project",
+  "label": "Project",
   "schemaDefinition": {
     "type": "object",
     "allOf": [
@@ -10,42 +10,108 @@
       {
         "type": "object",
         "properties": {
-          "title": {
+          "name": {
             "type": "string",
             "minLength": 1
           },
-          "header": {
+          "slug": {
             "type": "string",
+            "pattern": "^[a-zA-Z0-9-_]*$",
             "minLength": 1
+          },
+          "gallery": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DataSource"
+            },
+            "minItems": 0
+          },
+          "description": {
+            "type": "string"
+          },
+          "headerImage": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DataSource"
+            },
+            "minItems": 0
+          },
+          "gallery_name": {
+            "type": "string"
+          },
+          "gallery_description": {
+            "type": "string"
           }
         }
       }
     ],
     "required": [
-      "title",
-      "header"
+      "name",
+      "slug"
     ],
     "additionalProperties": false
   },
   "metaDefinition": {
-    "propertiesConfig": {
-      "title": {
-        "inputType": "text",
-        "unique": false,
-        "isTitlePart": true,
-        "helpText": "",
-        "label": "Title"
-      },
-      "header": {
-        "inputType": "text",
-        "unique": false,
-        "helpText": "",
-        "label": "Header"
-      }
-    },
     "order": [
-      "title",
-      "header"
-    ]
+      "name",
+      "slug",
+      "description",
+      "headerImage",
+      "gallery_name",
+      "gallery_description",
+      "gallery"
+    ],
+    "propertiesConfig": {
+      "name": {
+        "label": "Name",
+        "unique": true,
+        "helpText": "",
+        "inputType": "text",
+        "isTitlePart": true
+      },
+      "slug": {
+        "label": "Slug",
+        "unique": true,
+        "helpText": "",
+        "inputType": "text"
+      },
+      "gallery": {
+        "label": "Gallery",
+        "unique": false,
+        "helpText": "",
+        "inputType": "datasource",
+        "validation": {
+          "relationMultiple": true,
+          "relationContenttype": "_media"
+        }
+      },
+      "description": {
+        "label": "Description",
+        "unique": false,
+        "helpText": "",
+        "inputType": "richtext"
+      },
+      "headerImage": {
+        "label": "Header image",
+        "unique": false,
+        "helpText": "",
+        "inputType": "datasource",
+        "validation": {
+          "relationContenttype": "_media"
+        }
+      },
+      "gallery_name": {
+        "label": "Gallery name",
+        "unique": false,
+        "helpText": "",
+        "inputType": "text"
+      },
+      "gallery_description": {
+        "label": "Gallery description",
+        "unique": false,
+        "helpText": "",
+        "inputType": "richtext"
+      }
+    }
   }
 }

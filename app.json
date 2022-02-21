@@ -1,5 +1,5 @@
 {
-  "name": "Gatsby starter boilerplate",
+  "name": "Gatsby starter for projects portfolio",
   "env":{
     "GATSBY_FLOTIQ_API_KEY": {
       "description": "Flotiq API key"
