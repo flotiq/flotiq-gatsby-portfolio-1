@@ -5,6 +5,7 @@ import Layout from '../layouts/layout';
 import ProjectBackButton from '../components/project/ProjectBackButton';
 import Contact from '../components/Contact';
 import ContactImage from '../assets/contact-image.jpg';
+import ProjectGallery from '../components/project/ProjectGallery';
 
 const PortfolioProjectTemplate = ({ data }) => {
     const { project } = data;
@@ -13,7 +14,7 @@ const PortfolioProjectTemplate = ({ data }) => {
             <div className="flex flex-wrap max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
                 <ProjectBackButton additionalClass={['my-5']} backButtonText="Back to the main page" />
             </div>
-            <div className="flex flex-wrap max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+            <div className="flex flex-wrap max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 pb-10">
                 <div className="flex basis-full md:basis-1/2">
                     <Image
                         url={project.headerImage[0] && project.headerImage[0].localFile.publicURL}
@@ -31,6 +32,13 @@ const PortfolioProjectTemplate = ({ data }) => {
                     />
                 </div>
             </div>
+            <ProjectGallery
+                galleryName={project.gallery_name}
+                galleryDescription={project.gallery_description}
+                additionalClass={['text-base md:']}
+                gallery={project.gallery}
+                name={project.name}
+            />
             <div className="flex flex-wrap md:flex-nowrap justify-center max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 py-20">
                 <Contact
                     heading="Let's work together"
@@ -69,7 +77,10 @@ export const pageQuery = graphql`
                     }
                 }
             }
+            gallery_name
+            gallery_description
             gallery {
+                id
                 localFile {
                   publicURL
                 }
