@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header } from 'flotiq-components-react';
+import { Header, Button, Image } from 'flotiq-components-react';
 import Logo from '../assets/Logo.svg';
 
 const navigation = {
@@ -61,7 +61,7 @@ const navigation = {
     ],
 };
 
-const Contact = ({ heading, namInputLabel, messageInputLabel, buttonLabel, additionalClass }) => (
+const Contact = ({ heading, namInputLabel, messageInputLabel, buttonLabel, imageAlt, additionalClass }) => (
     <div className={['basis-full md:basis-2/4 lg:basis-1/4 '
     + 'cursor-pointer bg-white mb-5', ...additionalClass].join(' ')}
     >
@@ -104,7 +104,7 @@ const Contact = ({ heading, namInputLabel, messageInputLabel, buttonLabel, addit
             </div>
         </form>
         <div className="mt-12 flex items-center justify-between">
-            <img src={Logo} className="h-10" alt="" />
+            <Image url={Logo} additionalClasses={['h-10']} alt={imageAlt} />
             <div className="flex items-center justify-center space-x-4 md:space-x-3">
                 {navigation.social.map((item) => (
                     <a
