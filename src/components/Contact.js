@@ -94,13 +94,13 @@ const Contact = ({ heading, namInputLabel, messageInputLabel, buttonLabel, image
                 />
             </div>
             <div className="text-right">
-                <button
-                    type="submit"
-                    className="inline-flex justify-center py-3 px-10 text-base
-                         font-medium text-white bg-primary"
-                >
-                    {buttonLabel}
-                </button>
+                <Button
+                    label={buttonLabel}
+                    rounded="none"
+                    size="lg"
+                    additionalClasses={['inline-flex justify-center !py-3 !px-10 '
+                    + '!text-base !font-medium text-white bg-primary']}
+                />
             </div>
         </form>
         <div className="mt-12 flex items-center justify-between">
