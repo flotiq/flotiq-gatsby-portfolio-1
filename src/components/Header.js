@@ -2,6 +2,7 @@ import React from 'react';
 import { Disclosure } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { Link } from 'gatsby';
+import { Image } from 'flotiq-components-react';
 import Logo from '../assets/Logo.svg';
 
 const Header = () => (
@@ -30,11 +31,7 @@ const Header = () => (
 
                             <div className="flex-shrink-0 flex items-center">
                                 <Link to="/">
-                                    <img
-                                        className="h-10 md:h-14 w-auto"
-                                        src={Logo}
-                                        alt="Workflow"
-                                    />
+                                    <Image url={Logo} additionalClasses={['h-10 md:h-14 w-auto']} />
                                 </Link>
                             </div>
                         </div>
