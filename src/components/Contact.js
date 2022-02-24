@@ -6,7 +6,7 @@ const navigation = {
     social: [
         {
             name: 'Facebook',
-            href: '#',
+            href: 'https://www.facebook.com/flotiq',
             icon: (props) => (
                 <svg fill="currentColor" viewBox="0 0 13 25" {...props}>
                     <path
@@ -22,7 +22,7 @@ const navigation = {
         },
         {
             name: 'LinkedIn',
-            href: '#',
+            href: 'https://www.linkedin.com/company/flotiq/',
             icon: (props) => (
                 <svg fill="currentColor" viewBox="0 0 32 32" {...props}>
                     <rect y="9" width="7" height="23" />
@@ -37,7 +37,7 @@ const navigation = {
         },
         {
             name: 'Link',
-            href: '#',
+            href: 'https://flotiq.com/',
             icon: (props) => (
                 <svg fill="currentColor" viewBox="0 0 26.68 11.63" {...props}>
                     <path
