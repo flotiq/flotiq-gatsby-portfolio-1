@@ -1,4 +1,5 @@
 import React from 'react';
+import { Header } from 'flotiq-components-react';
 import Logo from '../assets/Logo.svg';
 
 const navigation = {
@@ -64,7 +65,7 @@ const Contact = ({ heading, namInputLabel, messageInputLabel, buttonLabel, addit
     <div className={['basis-full md:basis-2/4 lg:basis-1/4 '
     + 'cursor-pointer bg-white mb-5', ...additionalClass].join(' ')}
     >
-        <h2 className="uppercase text-lg md:text-xl mb-4 tracking-wide">{heading}</h2>
+        <Header text={heading} additionalClasses={['uppercase !text-lg md:!text-xl mb-4 !p-0 tracking-wide']} />
         <form action="#" method="POST" className="font-sora font-light flex flex-col space-y-4">
             <div>
                 <label htmlFor="full-name" className="sr-only">
