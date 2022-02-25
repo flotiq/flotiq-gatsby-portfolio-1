@@ -1,11 +1,12 @@
 import React from 'react';
+import { Header, Button, Image } from 'flotiq-components-react';
 import Logo from '../assets/Logo.svg';
 
 const navigation = {
     social: [
         {
             name: 'Facebook',
-            href: '#',
+            href: 'https://www.facebook.com/flotiq',
             icon: (props) => (
                 <svg fill="currentColor" viewBox="0 0 13 25" {...props}>
                     <path
@@ -21,7 +22,7 @@ const navigation = {
         },
         {
             name: 'LinkedIn',
-            href: '#',
+            href: 'https://www.linkedin.com/company/flotiq/',
             icon: (props) => (
                 <svg fill="currentColor" viewBox="0 0 32 32" {...props}>
                     <rect y="9" width="7" height="23" />
@@ -36,7 +37,7 @@ const navigation = {
         },
         {
             name: 'Link',
-            href: '#',
+            href: 'https://flotiq.com/',
             icon: (props) => (
                 <svg fill="currentColor" viewBox="0 0 26.68 11.63" {...props}>
                     <path
@@ -60,11 +61,11 @@ const navigation = {
     ],
 };
 
-const Contact = ({ heading, namInputLabel, messageInputLabel, buttonLabel, additionalClass }) => (
+const Contact = ({ heading, namInputLabel, messageInputLabel, buttonLabel, imageAlt, additionalClass }) => (
     <div className={['basis-full md:basis-2/4 lg:basis-1/4 '
     + 'cursor-pointer bg-white mb-5', ...additionalClass].join(' ')}
     >
-        <h2 className="uppercase text-lg md:text-xl mb-4 tracking-wide">{heading}</h2>
+        <Header text={heading} additionalClasses={['uppercase !text-lg md:!text-xl mb-4 !p-0 tracking-wide']} />
         <form action="#" method="POST" className="font-sora font-light flex flex-col space-y-4">
             <div>
                 <label htmlFor="full-name" className="sr-only">
@@ -93,17 +94,17 @@ const Contact = ({ heading, namInputLabel, messageInputLabel, buttonLabel, addit
                 />
             </div>
             <div className="text-right">
-                <button
-                    type="submit"
-                    className="inline-flex justify-center py-3 px-10 text-base
-                         font-medium text-white bg-primary"
-                >
-                    {buttonLabel}
-                </button>
+                <Button
+                    label={buttonLabel}
+                    rounded="none"
+                    size="lg"
+                    additionalClasses={['inline-flex justify-center !py-3 !px-10 '
+                    + '!text-base !font-medium text-white bg-primary']}
+                />
             </div>
         </form>
         <div className="mt-12 flex items-center justify-between">
-            <img src={Logo} className="h-10" alt="" />
+            <Image url={Logo} additionalClasses={['h-10']} alt={imageAlt} />
             <div className="flex items-center justify-center space-x-4 md:space-x-3">
                 {navigation.social.map((item) => (
                     <a

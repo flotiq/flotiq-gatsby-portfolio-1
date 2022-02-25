@@ -45,6 +45,7 @@ const PortfolioProjectTemplate = ({ data }) => {
                     namInputLabel="Name"
                     messageInputLabel="Message"
                     buttonLabel="Send"
+                    imageAlt={project.name}
                     additionalClass={['']}
                 />
                 <Image url={ContactImage} additionalClasses={['w-auto ml-5 max-h-72 hidden md:block']} />
