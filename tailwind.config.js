@@ -24,8 +24,5 @@ module.exports = {
         require('@tailwindcss/forms'),
         require('@tailwindcss/line-clamp'),
     ],
-    presets: [
-        require('./node_modules/flotiq-components-react/dist/tailwind.preset'),
-    ],
     safelist: require('./node_modules/flotiq-components-react/dist/tailwind.safelist'),
 };

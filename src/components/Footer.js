@@ -9,7 +9,9 @@ const Footer = () => (
         >
             <PoweredByFlotiq />
             <p className="text-center text-xs md:text-base font-light">
-                Copyright &copy; Flotiq 2022
+                Copyright &copy; Flotiq
+                {' '}
+                {new Date().getFullYear()}
             </p>
         </div>
     </footer>
