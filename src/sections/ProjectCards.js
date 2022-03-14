@@ -1,5 +1,4 @@
 import React from 'react';
-import { navigate } from 'gatsby';
 import ProjectCard from '../components/ProjectCard';
 import Contact from '../components/Contact';
 
@@ -8,13 +7,14 @@ const ProjectCards = ({ projects }) => (
         {projects.map((project) => (
             <ProjectCard
                 key={project.id}
-                onClick={() => { navigate(`/${project.slug}`); }}
+                slug={project.slug}
                 image={project.headerImage[0] && project.headerImage[0].localFile.publicURL}
                 name={project.name}
                 excerpt={project.description}
             />
         ))}
         <Contact
+            imageAlt="Let's work together"
             heading="Let's work together"
             namInputLabel="Name"
             messageInputLabel="Message"
