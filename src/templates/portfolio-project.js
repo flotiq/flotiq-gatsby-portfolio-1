@@ -31,13 +31,15 @@ const PortfolioProjectTemplate = ({ data }) => {
                 </div>
                 <div className="flex flex-col basis-full md:basis-1/2 pl-0 md:pl-12 py-5">
                     <Header
-                        text={project.name}
                         additionalClasses={['uppercase mb-12 !text-3xl md:!text-4xl lg:!text-5xl']}
-                    />
+                    >
+                        {project.name}
+                    </Header>
                     <Paragraph
-                        text={project.description}
                         additionalClasses={['!text-base md:!text-lg font-light font-sora']}
-                    />
+                    >
+                        {project.description}
+                    </Paragraph>
                 </div>
             </div>
             <ProjectGallery

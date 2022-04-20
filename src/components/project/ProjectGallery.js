@@ -36,8 +36,12 @@ const CarouselNavigation = ({ goToSlide, ...rest }) => {
 const ProjectGallery = ({ gallery, galleryName, galleryDescription }) => (
     <div className="grid grid-cols-1 md:grid-cols-4 max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 pt-10 pb-24">
         <div className="pr-5 mb-6 md:mb-0">
-            <Header text={galleryName} additionalClasses={['!text-2xl mb-5']} />
-            <Paragraph text={galleryDescription} additionalClasses={['!font-lg font-sora']} />
+            <Header additionalClasses={['!text-2xl mb-5']}>
+                {galleryName}
+            </Header>
+            <Paragraph additionalClasses={['!font-lg font-sora']}>
+                {galleryDescription}
+            </Paragraph>
         </div>
         <div className="col-span-3">
             <Carousel

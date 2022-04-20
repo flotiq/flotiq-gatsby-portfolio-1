@@ -16,7 +16,7 @@ const ProjectCard = ({ onClick, name, excerpt, image, slug }) => (
                         {name}
                     </Card.Title>
                     <Card.Text additionalClasses={['text-sm md:text-base font-sora font-light line-clamp-1']}>
-                        <div dangerouslySetInnerHTML={{ __html: excerpt }} />
+                        <span dangerouslySetInnerHTML={{ __html: excerpt }} />
                     </Card.Text>
                 </div>
             </Card.Body>
