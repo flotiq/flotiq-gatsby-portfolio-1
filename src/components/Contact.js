@@ -65,7 +65,9 @@ const Contact = ({ heading, namInputLabel, messageInputLabel, buttonLabel, image
     <div className={['basis-full md:basis-2/4 lg:basis-1/4 '
     + 'cursor-pointer bg-white mb-5', ...additionalClass].join(' ')}
     >
-        <Header text={heading} additionalClasses={['uppercase !text-lg md:!text-xl mb-4 !p-0 tracking-wide']} />
+        <Header additionalClasses={['uppercase !text-lg md:!text-xl mb-4 !p-0 tracking-wide']}>
+            {heading}
+        </Header>
         <form action="#" method="POST" className="font-sora font-light flex flex-col space-y-4">
             <div>
                 <label htmlFor="full-name" className="sr-only">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby'
+import { Link } from 'gatsby';
 import { ArrowLeftIcon } from '@heroicons/react/solid';
 
 const ProjectBackButton = ({ additionalClass, backButtonText }) => (

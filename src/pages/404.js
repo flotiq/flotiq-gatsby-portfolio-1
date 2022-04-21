@@ -9,7 +9,9 @@ const NotFoundPage = () => (
         <Helmet>
             <title>Page not found</title>
         </Helmet>
-        <Header text="Page not found, sorry" alignment="center" additionalClasses={['my-20', '!py-20']} />
+        <Header alignment="center" additionalClasses={['my-20', '!py-20']}>
+            Page not found, sorry
+        </Header>
         <div className="text-center my-20 py-20">
             {/* Example usage of button */}
             <Link to="/"><Button label="Go back to index" /></Link>
