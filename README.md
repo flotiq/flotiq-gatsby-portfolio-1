@@ -74,7 +74,7 @@ Live Demo: https://flotiqgatsbyportfolio1.gatsbyjs.io
 
 Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
 
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/flotiq-gatsby-portfolio-1)
+[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/flotiq/flotiq-gatsby-portfolio-1)
 
 You can also deploy this project to Heroku in 3 minutes:
 
