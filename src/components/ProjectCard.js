@@ -10,13 +10,14 @@ const ProjectCard = ({ onClick, name, excerpt, image, slug }) => {
                 onClick={onClick}
                 bordered={false}
                 additionalClasses={['px-1 cursor-pointer bg-white mb-5']}
-            >
+            >   
+                {image &&
                 <Card.Img
                     src={image}
                     alt={name}
                     additionalContainerClasses={['order-1 lg:order-2']}
                     imageAdditionalProps={imageSize}
-                />
+                />}
                 <Card.Body additionalClasses={['px-0 md:px-0']}>
                     <div>
                         <Card.Title additionalClasses={['uppercase my-3 text-xl md:text-2xl']}>
