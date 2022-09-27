@@ -44,6 +44,7 @@ const ProjectGallery = ({ gallery, galleryName, galleryDescription }) => (
             </Paragraph>
         </div>
         <div className="col-span-3">
+            {gallery &&
             <Carousel
                 draggable={false}
                 infinite
@@ -56,7 +57,7 @@ const ProjectGallery = ({ gallery, galleryName, galleryDescription }) => (
                 {gallery.map((image) => (
                     <Image url={image.localFile.publicURL} additionalClasses={['px-2']} key={image.id} />
                 ))}
-            </Carousel>
+            </Carousel>}
         </div>
     </div>
 );
