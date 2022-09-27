@@ -8,7 +8,7 @@ const ProjectCards = ({ projects }) => (
             <ProjectCard
                 key={project.id}
                 slug={project.slug}
-                image={project.headerImage?.[0] && project.headerImage[0].localFile.publicURL}
+                image={project.headerImage[0]?.localFile.publicURL}
                 name={project.name}
                 excerpt={project.description}
             />
