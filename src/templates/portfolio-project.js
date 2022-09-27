@@ -24,10 +24,11 @@ const PortfolioProjectTemplate = ({ data }) => {
             </div>
             <div className="flex flex-wrap max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 pb-10">
                 <div className="flex basis-full md:basis-1/2">
+                    {project.headerImage?.[0] &&
                     <Image
                         url={project.headerImage[0] && project.headerImage[0].localFile.publicURL}
                         stretched
-                    />
+                    />}
                 </div>
                 <div className="flex flex-col basis-full md:basis-1/2 pl-0 md:pl-12 py-5">
                     <Header
