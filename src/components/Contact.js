@@ -1,6 +1,6 @@
 import React from 'react';
 import { Header, Button } from 'flotiq-components-react';
-import { StaticImage } from "gatsby-plugin-image";
+import { StaticImage } from 'gatsby-plugin-image';
 
 const navigation = {
     social: [
@@ -106,7 +106,14 @@ const Contact = ({ heading, namInputLabel, messageInputLabel, buttonLabel, image
             </div>
         </form>
         <div className="mt-12 flex items-center justify-between">
-            <StaticImage src={'../assets/Logo.svg'} imgClassName={['h-10']} width={96} height={40} alt={imageAlt} placeholder="none" />
+            <StaticImage
+                src="../assets/Logo.svg"
+                imgClassName={['h-10']}
+                width={96}
+                height={40}
+                alt={imageAlt}
+                placeholder="none"
+            />
             <div className="flex items-center justify-center space-x-4 md:space-x-3">
                 {navigation.social.map((item) => (
                     <a

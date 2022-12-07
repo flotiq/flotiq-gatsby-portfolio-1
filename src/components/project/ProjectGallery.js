@@ -2,7 +2,7 @@ import React from 'react';
 import Carousel from 'react-multi-carousel';
 import { Header, Paragraph } from 'flotiq-components-react';
 import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/solid';
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 const responsive = {
     desktop: {
@@ -45,22 +45,24 @@ const ProjectGallery = ({ gallery, galleryName, galleryDescription }) => (
             </Paragraph>
         </div>
         <div className="col-span-3">
-            {gallery &&
-                <Carousel
-                    draggable={false}
-                    infinite
-                    autoplay={false}
-                    responsive={responsive}
-                    arrows={false}
-                    renderButtonGroupOutside
-                    customButtonGroup={<CarouselNavigation />}
-                >
-                    {gallery.map((image) => (
-                        <div className={['px-2']} key={image.id}>
-                            <GatsbyImage image={getImage(image.localFile)} alt={image.id} className={['px-2']} key={image.id} />
-                        </div>
-                    ))}
-                </Carousel>}
+            {gallery
+                && (
+                    <Carousel
+                        draggable={false}
+                        infinite
+                        autoplay={false}
+                        responsive={responsive}
+                        arrows={false}
+                        renderButtonGroupOutside
+                        customButtonGroup={<CarouselNavigation />}
+                    >
+                        {gallery.map((image) => (
+                            <div className={['px-2']} key={image.id}>
+                                <GatsbyImage image={getImage(image.localFile)} alt={image.id} key={image.id} />
+                            </div>
+                        ))}
+                    </Carousel>
+                )}
         </div>
     </div>
 );

@@ -2,11 +2,11 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { Header, Paragraph } from 'flotiq-components-react';
 import { Helmet } from 'react-helmet';
+import { StaticImage, GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Layout from '../layouts/layout';
 import ProjectBackButton from '../components/project/ProjectBackButton';
 import Contact from '../components/Contact';
 import ProjectGallery from '../components/project/ProjectGallery';
-import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image";
 
 const PortfolioProjectTemplate = ({ data }) => {
     const { project } = data;
@@ -24,12 +24,14 @@ const PortfolioProjectTemplate = ({ data }) => {
             </div>
             <div className="flex flex-wrap max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 pb-10">
                 <div className="basis-full md:basis-1/2">
-                    {project.headerImage[0] &&
-                        <GatsbyImage
-                            image={getImage(project.headerImage[0] && project.headerImage[0].localFile)}
-                            stretched='true'
-                            alt={project.name}
-                        />}
+                    {project.headerImage[0]
+                        && (
+                            <GatsbyImage
+                                image={getImage(project.headerImage[0] && project.headerImage[0].localFile)}
+                                stretched="true"
+                                alt={project.name}
+                            />
+                        )}
                 </div>
 
                 <div className="flex flex-col basis-full md:basis-1/2 pl-0 md:pl-12 py-5">
@@ -61,7 +63,14 @@ const PortfolioProjectTemplate = ({ data }) => {
                     imageAlt={project.name}
                     additionalClass={['']}
                 />
-                <StaticImage src={'../assets/contact-image.jpg'} width={499} height={288} alt='' className={['w-auto ml-5 max-h-72 hidden md:block']} placeholder="none" />
+                <StaticImage
+                    src="../assets/contact-image.jpg"
+                    width={499}
+                    height={288}
+                    alt="contact"
+                    className={['w-auto ml-5 max-h-72 hidden md:block']}
+                    placeholder="none"
+                />
             </div>
         </Layout>
     );
