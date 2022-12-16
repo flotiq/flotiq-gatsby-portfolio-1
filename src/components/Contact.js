@@ -1,6 +1,6 @@
 import React from 'react';
-import { Header, Button, Image } from 'flotiq-components-react';
-import Logo from '../assets/Logo.svg';
+import { Header, Button } from 'flotiq-components-react';
+import { StaticImage } from 'gatsby-plugin-image';
 
 const navigation = {
     social: [
@@ -63,7 +63,7 @@ const navigation = {
 
 const Contact = ({ heading, namInputLabel, messageInputLabel, buttonLabel, imageAlt, additionalClass }) => (
     <div className={['basis-full md:basis-2/4 lg:basis-1/4 '
-    + 'cursor-pointer bg-white mb-5', ...additionalClass].join(' ')}
+        + 'cursor-pointer bg-white mb-5', ...additionalClass].join(' ')}
     >
         <Header additionalClasses={['uppercase !text-lg md:!text-xl mb-4 !p-0 tracking-wide']}>
             {heading}
@@ -101,12 +101,19 @@ const Contact = ({ heading, namInputLabel, messageInputLabel, buttonLabel, image
                     rounded="none"
                     size="lg"
                     additionalClasses={['inline-flex justify-center !py-3 !px-10 '
-                    + '!text-base !font-medium text-white bg-primary']}
+                        + '!text-base !font-medium text-white bg-primary']}
                 />
             </div>
         </form>
         <div className="mt-12 flex items-center justify-between">
-            <Image url={Logo} additionalClasses={['h-10']} alt={imageAlt} />
+            <StaticImage
+                src="../assets/Logo.svg"
+                imgClassName={['h-10']}
+                width={96}
+                height={40}
+                alt={imageAlt}
+                placeholder="none"
+            />
             <div className="flex items-center justify-center space-x-4 md:space-x-3">
                 {navigation.social.map((item) => (
                     <a

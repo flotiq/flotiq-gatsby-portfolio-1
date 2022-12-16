@@ -1,11 +1,11 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Image, Header, Paragraph } from 'flotiq-components-react';
+import { Header, Paragraph } from 'flotiq-components-react';
 import { Helmet } from 'react-helmet';
+import { StaticImage, GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Layout from '../layouts/layout';
 import ProjectBackButton from '../components/project/ProjectBackButton';
 import Contact from '../components/Contact';
-import ContactImage from '../assets/contact-image.jpg';
 import ProjectGallery from '../components/project/ProjectGallery';
 
 const PortfolioProjectTemplate = ({ data }) => {
@@ -23,13 +23,17 @@ const PortfolioProjectTemplate = ({ data }) => {
                 <ProjectBackButton additionalClass={['my-5']} backButtonText="Back to the main page" />
             </div>
             <div className="flex flex-wrap max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 pb-10">
-                <div className="flex basis-full md:basis-1/2">
-                    {project.headerImage?.[0] &&
-                    <Image
-                        url={project.headerImage[0] && project.headerImage[0].localFile.publicURL}
-                        stretched
-                    />}
+                <div className="basis-full md:basis-1/2">
+                    {project.headerImage[0]
+                        && (
+                            <GatsbyImage
+                                image={getImage(project.headerImage[0] && project.headerImage[0].localFile)}
+                                stretched="true"
+                                alt={project.name}
+                            />
+                        )}
                 </div>
+
                 <div className="flex flex-col basis-full md:basis-1/2 pl-0 md:pl-12 py-5">
                     <Header
                         additionalClasses={['uppercase mb-12 !text-3xl md:!text-4xl lg:!text-5xl']}
@@ -59,7 +63,14 @@ const PortfolioProjectTemplate = ({ data }) => {
                     imageAlt={project.name}
                     additionalClass={['']}
                 />
-                <Image url={ContactImage} additionalClasses={['w-auto ml-5 max-h-72 hidden md:block']} />
+                <StaticImage
+                    src="../assets/contact-image.jpg"
+                    width={499}
+                    height={288}
+                    alt="contact"
+                    className={['w-auto ml-5 max-h-72 hidden md:block']}
+                    placeholder="none"
+                />
             </div>
         </Layout>
     );
@@ -85,16 +96,23 @@ export const pageQuery = graphql`
                 localFile {
                     publicURL
                     childImageSharp {
-                        gatsbyImageData(layout: FULL_WIDTH)
+                        gatsbyImageData(layout: FULL_WIDTH, placeholder: NONE)
                     }
                 }
             }
             gallery_name
             gallery_description
             gallery {
+                extension
+                url
+                width
+                height
                 id
                 localFile {
                   publicURL
+                  childImageSharp {
+                  gatsbyImageData(layout: FULL_WIDTH, placeholder: NONE)
+                }
                 }
             }
         }
