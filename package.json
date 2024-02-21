@@ -16,7 +16,7 @@
     "lint": "eslint --ext .js,.jsx ."
   },
   "dependencies": {
-    "@fontsource/playfair-display": "^4.5.1",
+    "@fontsource/playfair-display": "^5.0.20",
     "@fontsource/sora": "^4.5.0",
     "@headlessui/react": "^1.4.2",
     "@heroicons/react": "^1.0.5",
