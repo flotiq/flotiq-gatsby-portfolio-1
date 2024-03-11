@@ -2060,10 +2060,10 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@fontsource/playfair-display@^4.5.1":
-  version "4.5.12"
-  resolved "https://registry.npmjs.org/@fontsource/playfair-display/-/playfair-display-4.5.12.tgz"
-  integrity sha512-B7EUxMRW6EzE701WICRmpQM30hd6vHPMrfOzb7u8H0nEwrjK2PtJjGv7rbEl9Q02qoT54947yi630QgL9he5/A==
+"@fontsource/playfair-display@^5.0.22":
+  version "5.0.22"
+  resolved "https://registry.yarnpkg.com/@fontsource/playfair-display/-/playfair-display-5.0.22.tgz#fbd75c55247dc53eec42629d01fbfab2b095a393"
+  integrity sha512-pvNbqNBBUnhdk+eogQOv7444+EibVv97u2h7fJdRjc5Ug0+xv2eVDm1CDWKaMdNGlynIT5uRn4zeR5/bb6RNeA==
 
 "@fontsource/sora@^4.5.0":
   version "4.5.10"
