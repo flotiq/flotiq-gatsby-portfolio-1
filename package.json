@@ -52,7 +52,7 @@
     "@babel/plugin-transform-react-jsx": "^7.23.4",
     "@babel/preset-react": "^7.24.1",
     "@hot-loader/react-dom": "17.0.2",
-    "@typescript-eslint/parser": "^7.7.0",
+    "@typescript-eslint/parser": "^7.13.1",
     "autoprefixer": "^10.4.19",
     "babel-eslint": "^10.1.0",
     "cross-env": "^7.0.3",
