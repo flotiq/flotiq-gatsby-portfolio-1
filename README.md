@@ -51,6 +51,7 @@ This step is optional and is not necessary if you used flotiq-cli to start the p
 
 If you wish to import example data to your account, before running `gatsby develop` run:
 
+
 ```sh
 flotiq import .flotiq [flotiqApiKey]
 ```
