@@ -52,7 +52,7 @@ This step is optional and is not necessary if you used flotiq-cli to start the p
 If you wish to import example data to your account, before running `gatsby develop` run:
 
 ```sh
-flotiq import ./flotiq [flotiqApiKey]
+flotiq import .flotiq [flotiqApiKey]
 ```
 
 It will add four example objects to your Flotiq account.
