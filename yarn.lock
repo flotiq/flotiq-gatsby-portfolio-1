@@ -2344,10 +2344,10 @@
   resolved "https://registry.yarnpkg.com/@floating-ui/utils/-/utils-0.2.7.tgz#d0ece53ce99ab5a8e37ebdfe5e32452a2bfc073e"
   integrity sha512-X8R8Oj771YRl/w+c1HqAC1szL8zWQRwFvgDwT129k9ACdBoud/+/rX9V0qiMl6LWUdP9voC2nDVZYPMQQsb6eA==
 
-"@fontsource/playfair-display@^5.0.25":
-  version "5.0.25"
-  resolved "https://registry.yarnpkg.com/@fontsource/playfair-display/-/playfair-display-5.0.25.tgz#062d7a4ed792e676f9f8ab236165211494733125"
-  integrity sha512-iCEf+G76DGCawpdE2ld8Ont9wdbYEG+rOsufaR+u1fVCa6vI1Cfpkw/m/JsEA/BiSgTWVOiIy/uXA2WJ+MY9Kw==
+"@fontsource/playfair-display@^5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/playfair-display/-/playfair-display-5.1.0.tgz#e405a164fbd41e114be977579932dc24a5676905"
+  integrity sha512-O4Ph7IwM2sH4IpSgYKP1ZdOuaYd22+eXdT1jU8/kDM6gIABV2RoqJM34Z+WD364+mO1noXPcF1ZtA4aRfcFZLA==
 
 "@fontsource/sora@^5.0.19":
   version "5.0.19"
