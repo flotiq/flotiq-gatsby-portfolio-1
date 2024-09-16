@@ -18,7 +18,7 @@
   "dependencies": {
     "@fontsource/playfair-display": "^5.0.25",
     "@fontsource/sora": "^5.0.19",
-    "@headlessui/react": "^2.1.4",
+    "@headlessui/react": "^2.1.8",
     "@heroicons/react": "1.0.6",
     "@popperjs/core": "^2.11.8",
     "@tailwindcss/forms": "^0.5.8",
