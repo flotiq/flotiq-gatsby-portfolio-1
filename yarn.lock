@@ -2349,10 +2349,10 @@
   resolved "https://registry.yarnpkg.com/@fontsource/playfair-display/-/playfair-display-5.0.25.tgz#062d7a4ed792e676f9f8ab236165211494733125"
   integrity sha512-iCEf+G76DGCawpdE2ld8Ont9wdbYEG+rOsufaR+u1fVCa6vI1Cfpkw/m/JsEA/BiSgTWVOiIy/uXA2WJ+MY9Kw==
 
-"@fontsource/sora@^5.0.19":
-  version "5.0.19"
-  resolved "https://registry.yarnpkg.com/@fontsource/sora/-/sora-5.0.19.tgz#1873263f431aac0fcbf9420cd38cdd78fcbe906b"
-  integrity sha512-UonP14EH8X0WgKjTbOQsmQAL862O4wvi4i4+EDN/gUutMau6nOjrMutn8XiLyRm98cjUbijMXhJ4NcOI+MBFNw==
+"@fontsource/sora@^5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/sora/-/sora-5.1.0.tgz#437dcf12ae73f22a9fb33a21bb6f6e5131254370"
+  integrity sha512-rcjKi18Y49yFDBPzgh2r2/Rv+hrJTGLhlouxYxc9CN1GPNZ+NyEqhrE2GNz/0LipcxTy2S7DhNXJpeJSLNpIeA==
 
 "@gatsbyjs/parcel-namer-relative-to-cwd@^2.13.1":
   version "2.13.1"
