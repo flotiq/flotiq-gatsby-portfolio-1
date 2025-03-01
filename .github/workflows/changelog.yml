@@ -11,8 +11,8 @@ jobs:
     env:
       CHANGELOG_FILE: CHANGELOG.md
       VERSION_FILE: package.json
-      CI_MERGE_REQUEST_TARGET_BRANCH_NAME: ${{ github.event.pull_request.head.ref }}
-      TARGET_REF: ${{ github.event.pull_request.base.ref }}
+      CI_MERGE_REQUEST_SOURCE_BRANCH_NAME: ${{ github.event.pull_request.head.ref }}
+      CI_MERGE_REQUEST_TARGET_BRANCH_NAME: ${{ github.event.pull_request.base.ref }}
     steps:
       - uses: actions/checkout@v4
       - run: |
