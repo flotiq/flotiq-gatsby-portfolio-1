@@ -29,16 +29,13 @@ jobs:
             jq .version -r
           }
           # Install dependencies
-          - |-
           npx -q semver-compare-cli --help > /dev/null || echo ""
           npx -q changelog-parser --help > /dev/null || echo ""
           
           (apt update && apt install -y jq) > /dev/null
           # Make sure CHANGELOG has Unix line endings
-          - |-
           [ -f $CHANGELOG_FILE ] && sed -i.bak 's/\r$//' $CHANGELOG_FILE || echo "No changelog file detected"
           # Gather version info
-          - |-
           git fetch origin $CI_MERGE_REQUEST_TARGET_BRANCH_NAME
           TARGET_REF="origin/$CI_MERGE_REQUEST_TARGET_BRANCH_NAME"
           COMMON_ANCESTOR=$(git merge-base HEAD $TARGET_REF)
@@ -70,7 +67,6 @@ jobs:
           echo "OLD_VERSION=$OLD_VERSION"
           echo "CURRENT_VERSION=$CURRENT_VERSION"
           # Run all checks
-          - |-
           if echo $CHANGED_FILES | grep -q ${VERSION_FILE};
           then echo_green ${VERSION_FILE} file changed on $CI_MERGE_REQUEST_SOURCE_BRANCH_NAME
           else echo_red ${VERSION_FILE} file did not change on $CI_MERGE_REQUEST_SOURCE_BRANCH_NAME; FAILED=true
