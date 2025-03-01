@@ -41,18 +41,13 @@ jobs:
           TARGET_REF="origin/$CI_MERGE_REQUEST_TARGET_BRANCH_NAME"
           echo target ref $TARGET_REF
           COMMON_ANCESTOR=$(git merge-base HEAD $TARGET_REF)
-          echo common ancestor $COMMON_ANCESTOR
           CHANGED_FILES=$(git diff -w --name-only HEAD $COMMON_ANCESTOR)
-          echo "changed files $CHANGED_FILES"
           CHANGED_FILES_TO_CURRENT_TARGET=$(git diff -w --name-only HEAD "${TARGET_REF}")
-          echo "changed files to current $CHANGED_FILES_TO_CURRENT_TARGET"
-          echo "check read version"
           
           if [ ! "$(type -t read_version)" = 'function' ]; then 
             function read_version() { cat; }; 
           fi
           
-          echo "check current version"
           if [ -f ./${VERSION_FILE} ]; then
             CURRENT_VERSION=$(cat ./${VERSION_FILE} | read_version)
           else
@@ -60,13 +55,11 @@ jobs:
             CURRENT_VERSION="0.0.0"
           fi
           
-          echo "check remote version"
           if ! REMOTE_VERSION=$(git show ${TARGET_REF}:${VERSION_FILE} | read_version); then
             echo "No remote VERSION exists, assuming v0.0.0"
             REMOTE_VERSION="0.0.0"
           fi
           
-          echo "check old version"
           if ! OLD_VERSION=$(git show $COMMON_ANCESTOR:${VERSION_FILE} | read_version); then
             echo "No old VERSION exists, assuming v0.0.0"
             OLD_VERSION="0.0.0"
