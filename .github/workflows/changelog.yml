@@ -15,6 +15,8 @@ jobs:
       CI_MERGE_REQUEST_TARGET_BRANCH_NAME: ${{ github.event.pull_request.base.ref }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 100
       - run: |
           RED='\033[31;1m'
           GREEN='\033[32;1m'
