@@ -32,7 +32,6 @@ jobs:
           npx -q semver-compare-cli --help > /dev/null || echo ""
           npx -q changelog-parser --help > /dev/null || echo ""
           
-          (apt update && apt install -y jq) > /dev/null
           # Make sure CHANGELOG has Unix line endings
           [ -f $CHANGELOG_FILE ] && sed -i.bak 's/\r$//' $CHANGELOG_FILE || echo "No changelog file detected"
           # Gather version info
