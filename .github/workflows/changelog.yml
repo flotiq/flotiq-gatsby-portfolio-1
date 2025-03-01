@@ -37,9 +37,13 @@ jobs:
           # Gather version info
           git fetch origin $CI_MERGE_REQUEST_TARGET_BRANCH_NAME
           TARGET_REF="origin/$CI_MERGE_REQUEST_TARGET_BRANCH_NAME"
+          echo target ref $TARGET_REF
           COMMON_ANCESTOR=$(git merge-base HEAD $TARGET_REF)
+          echo common ancestor $COMMON_ANCESTOR
           CHANGED_FILES=$(git diff -w --name-only HEAD $COMMON_ANCESTOR)
+          echo "changed files $CHANGED_FILES"
           CHANGED_FILES_TO_CURRENT_TARGET=$(git diff -w --name-only HEAD "${TARGET_REF}")
+          echo "changed files to current $CHANGED_FILES_TO_CURRENT_TARGET"
           echo "check read version"
           
           if [ ! "$(type -t read_version)" = 'function' ]; then 
