@@ -2,7 +2,7 @@
   "name": "flotiq-gatsby-portfolio-1",
   "private": true,
   "description": "A projects portfolio starter for Gatsby",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "author": "Flotiq team <helo@flotiq.com> (https://flotiq.com/)",
   "scripts": {
@@ -37,12 +37,12 @@
     "gatsby-source-flotiq": "^5.3.1",
     "gatsby-transformer-sharp": "^5.14.0",
     "moment": "^2.30.1",
-    "node": "^23.8.0",
+    "node": "^23.9.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-helmet": "^6.1.0",
     "react-multi-carousel": "^2.8.5",
-    "typescript": "^5.7.3",
+    "typescript": "^5.8.2",
     "webpack": "^5.98.0"
   },
   "devDependencies": {
@@ -52,7 +52,7 @@
     "@babel/plugin-transform-react-jsx": "^7.25.9",
     "@babel/preset-react": "^7.26.3",
     "@hot-loader/react-dom": "17.0.2",
-    "@typescript-eslint/parser": "^8.24.0",
+    "@typescript-eslint/parser": "^8.25.0",
     "autoprefixer": "^10.4.20",
     "babel-eslint": "^10.1.0",
     "cross-env": "^7.0.3",
@@ -65,10 +65,10 @@
     "eslint-plugin-jsx": "^0.1.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.4",
-    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
     "gatsby-plugin-postcss": "^6.14.0",
-    "postcss": "^8.5.2",
-    "prettier": "^3.5.1",
+    "postcss": "^8.5.3",
+    "prettier": "^3.5.2",
     "tailwindcss": "^3.4.17"
   },
   "repository": {
